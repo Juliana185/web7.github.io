@@ -1,0 +1,122 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: FreeMono, monospace; /* Измененный шрифт */
+    margin: 0;
+    padding: 0;
+    background-color: #faa08c; /* цвет фона */
+    letter-spacing: 10px; /* Расстояние между буквами */
+}
+
+
+.contain {
+    max-width: 960px;
+    margin: auto;
+    padding: 10px;
+}
+
+header {
+    background-color: #300; /* Цвет шапки */
+    color: white; /* Цвет текста в шапке */
+    text-align: center;
+    font-size: 30px;
+    padding: 20px 0; /* Увеличенные отступы */
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 15px;
+}
+
+nav ul li a {
+    color: #f08be6; /* Цвет ссылок в навигации */
+    text-decoration: none;
+}
+
+footer {
+    background-color: #300; /* Цвет футера */
+    color: white; /* Цвет текста в футере */
+    text-align: center;
+    font-size: 30px;
+    padding: 30px 0;
+}
+
+.gallery-container {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Центрируем контейнер */
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    margin-top: 80px; /* Отступ сверху для галереи */
+    margin-bottom: 80px; /* Отступ снизу для галереи */
+}
+
+.gallery {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.gallery-item {
+    flex: 0 0 calc(33.33% - 20px); /* Три изображения по горизонтали для десктопа */
+    margin: 10px; /* Отступы между изображениями */
+}
+
+.gallery-item img {
+    width: 100%; /* Изображение занимает всю ширину */
+    height: auto; /* Сохраняем пропорции */
+    display: block;
+    border-radius: 15px; /* Скругленные углы */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Тень для изображения */
+}
+
+.arrow {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.left {
+    position: absolute;
+    left: 10px;
+}
+
+.right {
+    position: absolute;
+    right: 10px;
+}
+
+.pager {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Мобильные стили */
+@media (max-width: 768px) {
+    .gallery-item {
+        min-width: 100%; /* Одно изображение на мобильных устройствах */
+        max-width: 100%;
+        margin-bottom: 10px; /* Отступ между изображениями в мобильной версии */
+        flex: 0 0 calc(100% - 20px); /* Одно изображение по горизонтали для мобильных устройств */
+    }
+}
+
+/* Иконка для каждого изображения */
+.gallery-item::before {
+    display: block; /* Отображаем иконку как блок */
+    font-size: 24px; /* Размер иконки */
+    text-align: center; /* Центрируем иконку */
+    margin-bottom: 5px; /* Отступ между иконкой и изображением */
+}
